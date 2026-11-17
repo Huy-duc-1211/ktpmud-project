@@ -1,0 +1,11 @@
+# Đóng góp của các thành viên — nhóm 173820_n27
+
+> Bản dự thảo PC-2, tổng hợp từ các bằng chứng hiện có; nhóm tiếp tục đối chiếu và cập nhật trước khi nộp bản cuối. Danh sách dưới đây không đánh giá đóng góp chỉ bằng số commit.
+
+| Mã | Thành viên | MSSV | Đóng góp ghi nhận | Bằng chứng |
+| --- | --- | --- | --- | --- |
+| SV1 | Phạm Huy Đức | 202414049 | Leader; phụ trách Requirements, ADR, điều phối và tích hợp; sửa M1-02 và M1-03 với AI hỗ trợ; tổng hợp kết quả review QA và benchmark sơ bộ. | [PR #1](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/pull/1), [PR #2](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/pull/2), [PR #6](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/pull/6), [bằng chứng QA M2](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/commit/2c793ad), [benchmark sơ bộ](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/commit/0d00584) |
+| SV2 | Trần Nguyễn Hoàng Hải | 202414079 | Tác giả bản M1-02 gốc; phụ trách triển khai Rule Engine, validation và test; cập nhật công cụ chạy ca và xuất CSV. | [PR #3](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/pull/3), [triển khai M2](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/commit/ecb6eed), [xuất CSV](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/commit/9628410), [sửa runner trên Windows](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/commit/59f5ac4) |
+| SV3 | Đào Việt Đức | 202414050 | Tác giả bản QA gốc; cung cấp các file bằng chứng cho 175 ca thiết kế; GitHub ghi nhận approval trên PR #7. Các công việc M2 được phân công nhưng chưa có bằng chứng hoàn thành không được ghi là đã hoàn thành. | [PR #4](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/pull/4), [175 file bằng chứng](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/commit/62c3c89), [review PR #7](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/pull/7#pullrequestreview-5939815155) |
+
+Phần ghi nhận trên phân biệt đóng góp gốc và các lượt chỉnh sửa tiếp theo. Những ca thiết kế và file bằng chứng không tự xác nhận test đã được chạy hoặc nghiệm thu; kết quả chạy được ghi trong báo cáo test riêng.
