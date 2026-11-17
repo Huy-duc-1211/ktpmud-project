@@ -2,7 +2,7 @@
 
 - Nhóm: `173820_n27`, lớp `173820`.
 - Mốc hồ sơ: bản chuẩn bị PC-2 ngày 17/11/2026, **chưa phải bản freeze hoặc bài nộp cuối**.
-- Fork code: [https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter); commit PC-2 tạm dùng: [`7a8da1e9697359fbb884c911d744129c1a752455`](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/commit/7a8da1e9697359fbb884c911d744129c1a752455).
+- Fork code: [https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter); commit PC-2 dự kiến: [`d00216053c206435f370c977c51b42d711623861`](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/commit/d00216053c206435f370c977c51b42d711623861).
 - Starter: [`bkt-2026-v1`](https://github.com/fossbk-spec/ktpmud-bkt-ruleengine-starter/tree/bkt-2026-v1), SHA `1c0a5b11fe8ea2b8a3126665cfe13ff551ad3469`.
 
 Nhóm xây dựng mô-đun Python nhận input synthetic theo Decision Table, phân loại bằng `classify(patient)`, trả mức, mã rule và lý do, sau đó ghi audit JSONL. Chương trình không sử dụng dữ liệu bệnh nhân thật và không đưa khuyến nghị điều trị.
@@ -16,7 +16,7 @@ Mã nguồn/test nằm ở fork code, không nằm trong thư mục hồ sơ nà
 ```powershell
 git clone https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter.git
 cd ktpmud-bkt-ruleengine-starter
-git checkout 7a8da1e9697359fbb884c911d744129c1a752455
+git checkout d00216053c206435f370c977c51b42d711623861
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
