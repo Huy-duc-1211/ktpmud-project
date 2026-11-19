@@ -1,6 +1,6 @@
-# Checklist bảo mật, quyền riêng tư và audit — bản PC-2
+# Checklist bảo mật, quyền riêng tư và audit — ứng viên trước Freeze
 
-**Phạm vi:** review và test code synthetic tại mốc code sau PR #7; chưa phải kiểm định toàn bộ môi trường hoặc xác nhận của GV/TA. Người tổng hợp: Lead (SV1). [Nguồn test audit](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/7a8da1e9697359fbb884c911d744129c1a752455/tests/test_audit.py) · [Quyết định audit](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/7a8da1e9697359fbb884c911d744129c1a752455/DECISIONS.md) · [Báo cáo test](TEST_REPORT.md).
+**Phạm vi:** review và test code synthetic ở ứng viên `4be2751`, đối chiếu QA tại PR #10 commit `33c5a63`; chưa phải kiểm định toàn bộ môi trường hoặc xác nhận của GV/TA. Người tổng hợp: Lead (SV1). [Nguồn test audit](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/33c5a63e9e4993c3d17adc93b0dc0d8b5e63e4ed/tests/test_audit.py) · [Quyết định audit](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/33c5a63e9e4993c3d17adc93b0dc0d8b5e63e4ed/DECISIONS.md) · [Báo cáo test](TEST_REPORT.md).
 
 | Mục cần kiểm | Bằng chứng / trạng thái | Giới hạn và việc tiếp theo |
 |---|---|---|
@@ -13,7 +13,7 @@
 | Không lộ input qua lỗi/log | Các test canary kiểm tra message, exception chain/traceback, stdout/stderr, log và audit trong các đường được test. | Kết luận: **chưa phát hiện lộ dữ liệu trong phạm vi test**, không bảo đảm mọi thư viện/môi trường. |
 | Đường dẫn audit | Mặc định ngoài repo trong thư mục người dùng; `DR_MAY_DAY_AUDIT_PATH` chấp nhận đường dẫn tuyệt đối ngoài repo. | Thành viên tự quản lý file và quyền truy cập; không commit log hoặc payload. |
 | JSONL có dòng hỏng | Ghi tiếp tách dòng nếu thiếu newline; công cụ đọc bỏ qua dòng sai/khóa trùng, báo vị trí và mã thoát 3 nếu đọc một phần. | Không sửa hoặc chứng thực phần dữ liệu cũ; không bảo đảm an toàn ghi đồng thời hay khôi phục sau mất điện. |
-| Secret / PII | Chưa có bằng chứng rà soát độc lập toàn bộ repo và lịch sử tại SHA freeze. AI-use log không chứa PII; dữ liệu audit/demo không chứa thông tin định danh thực. | Rà cả mã, file cấu hình, file đầu ra và lịch sử trước Freeze; metadata nhóm do nhóm chủ động cung cấp nằm trong hồ sơ nộp công khai. |
-| Bằng chứng cuối | CI và kết quả sơ bộ có trong [TEST_REPORT.md](TEST_REPORT.md). | Chạy lại các kiểm tra liên quan và cập nhật SHA freeze, môi trường, người review. |
+| Secret / PII | Test canary và review dữ liệu synthetic chưa phát hiện dữ liệu bệnh nhân thật trong phạm vi rà. Chưa có bằng chứng kiểm toán độc lập toàn bộ repo/lịch sử tại SHA freeze. | Rà mã, file cấu hình, output và lịch sử ở SHA cuối; họ tên/MSSV trong hồ sơ là metadata nhóm công bố có chủ đích, không là input bệnh nhân. |
+| Bằng chứng ứng viên | [TEST_REPORT.md](TEST_REPORT.md) có CI 490 passed/3 skipped và hai lượt benchmark; [QA execution review](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/33c5a63e9e4993c3d17adc93b0dc0d8b5e63e4ed/docs/qa/EXECUTION_REVIEW.md) ghi giới hạn. | Gắn SHA/tag và CI cuối; peer technical review cá nhân chưa có record đủ cho CHK-039/042/060. |
 
 **Cảnh báo:** educational/synthetic — not for clinical use.
