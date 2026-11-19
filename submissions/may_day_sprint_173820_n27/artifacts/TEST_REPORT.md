@@ -1,8 +1,8 @@
-# Báo cáo kiểm thử và hiệu năng — đối chiếu sau merge PR #10 (19/11/2026)
+# Báo cáo kiểm thử và hiệu năng — snapshot gắn tag 19/11/2026
 
 ## 1. Phạm vi
 
-Mã classifier/audit/test trên `track-a-development` ở commit [`4be2751f76e540a563de9f09f24935753f80a2e7`](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/commit/4be2751f76e540a563de9f09f24935753f80a2e7). [PR #10](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/pull/10) đã merge, tạo commit tích hợp [`7af8d47fd410b96dcdb4b7caccd48580ce07cf4a`](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/commit/7af8d47fd410b96dcdb4b7caccd48580ce07cf4a), không đổi mã phân loại. Đã có CI thành công trên commit merge; tag phát hành và kết luận Freeze chưa hoàn tất.
+Mã classifier/audit/test trên `track-a-development` ở commit [`4be2751f76e540a563de9f09f24935753f80a2e7`](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/commit/4be2751f76e540a563de9f09f24935753f80a2e7). [PR #10](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/pull/10) đã merge, tạo commit tích hợp [`7af8d47fd410b96dcdb4b7caccd48580ce07cf4a`](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/commit/7af8d47fd410b96dcdb4b7caccd48580ce07cf4a), không đổi mã phân loại. CI thành công trên commit merge đã được gắn [tag `bkt-2026-173820_n27-rc1`](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/tree/bkt-2026-173820_n27-rc1); [phần Freeze tiến độ](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/e692ad5d45f6de21d28279b957eb723b8ec256ac/progress/PROGRESS.md) ghi nhận sau khi tạo tag.
 
 Nguồn: [Test Cases 175 ca](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/7af8d47fd410b96dcdb4b7caccd48580ce07cf4a/TEST_CASES.csv), [81 ca helper](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/7af8d47fd410b96dcdb4b7caccd48580ce07cf4a/tests/fixtures/INTERNAL_STATE_CASES.csv), [QA Matrix](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/7af8d47fd410b96dcdb4b7caccd48580ce07cf4a/docs/qa/QA_MATRIX.xlsx) và [phương pháp đối chiếu QA](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/7af8d47fd410b96dcdb4b7caccd48580ce07cf4a/docs/qa/EXECUTION_REVIEW.md).
 
@@ -28,13 +28,13 @@ Cả hai lượt thấp hơn ngưỡng p95 <100 ms **trong môi trường đã k
 
 ## 4. A-01–A-11 và việc còn chờ
 
-[QA Matrix](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/7af8d47fd410b96dcdb4b7caccd48580ce07cf4a/docs/qa/QA_MATRIX.xlsx) ghi 11 AC `PASS` **trên ứng viên**, 63/64 ca QA và 55/60 checklist `PASS`. Một ca QA (`QA-033`) và năm checklist (`CHK-029/039/042/045/060`) còn `BLOCKED`: permalink README tại SHA cuối và record peer technical review/mapping từ thành viên. Các câu giải thích `ly_do` đã được Leader rà ngữ nghĩa; không biến lượt rà đó thành review cá nhân của Hải/Việt Đức.
+[QA Matrix](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/7af8d47fd410b96dcdb4b7caccd48580ce07cf4a/docs/qa/QA_MATRIX.xlsx) ghi 11 AC `PASS` **trên ứng viên**, 63/64 ca QA và 55/60 checklist `PASS`. Một ca QA (`QA-033`) và năm checklist (`CHK-029/039/042/045/060`) còn `BLOCKED` trong workbook tại tag: các dòng yêu cầu SHA chưa được sửa hồi tố sau khi tag xuất hiện; các dòng còn lại thiếu record peer technical review/mapping từ thành viên. Các câu giải thích `ly_do` đã được Leader rà ngữ nghĩa; không biến lượt rà đó thành review cá nhân của Hải/Việt Đức.
 
-| AC | Kết quả ứng viên | Điều kiện trước kết luận cuối |
+| AC | Tự đánh giá trên tag | Bằng chứng và giới hạn |
 |---|---|---|
-| A-01–A-08 | `PASS` theo test, đối chiếu input và QA hiện có. | Đối chiếu mã và bằng chứng với SHA/tag Freeze; ghi rõ peer sign-off nếu có. |
-| A-09 | `PASS`: workflow PR chạy pytest thật, CI PR #10 xanh. | Gắn URL run của HEAD cuối nếu thay đổi. |
-| A-10 | `PASS` ứng viên: p95 0.301703/0.349306 ms trong `/tmp` tmpfs. | Đối chiếu code/môi trường cuối; nêu giới hạn I/O. |
-| A-11 | `PASS` ứng viên: README có nguyên văn disclaimer. | Ghim permalink README tại SHA cuối. |
+| A-01–A-08 | `PASS` theo test, đối chiếu input và QA hiện có. | Tag trỏ đúng commit CI xanh; review kỹ thuật cá nhân của thành viên chưa có record riêng. |
+| A-09 | `PASS`: workflow PR và CI sau merge xanh. | [Run trên SHA đã gắn tag](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/actions/runs/44525947180). |
+| A-10 | `PASS` theo hai lượt đo trên code không đổi tại tag. | p95 0.301703/0.349306 ms trong `/tmp` tmpfs; không đại diện I/O ổ vật lý. |
+| A-11 | `PASS`: README có nguyên văn disclaimer. | [README tại SHA đã gắn tag](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/7af8d47fd410b96dcdb4b7caccd48580ce07cf4a/README.md). |
 
-`validate` xanh của PR nộp bài chỉ chứng minh cấu trúc tự động. `source-ref.json` đã ghi SHA merge và CI tương ứng; tag còn chờ tạo thật. Sau đó cập nhật phần Freeze của progress, kiểm tag và chạy lại `validate` trên cùng Draft PR. Không suy ra TA đã nghiệm thu từ CI hoặc approval nội bộ.
+`validate` xanh của PR nộp bài chỉ chứng minh cấu trúc tự động. `source-ref.json` ghi SHA merge, tag đã tạo và CI tương ứng; [Freeze progress](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/e692ad5d45f6de21d28279b957eb723b8ec256ac/progress/PROGRESS.md) được cập nhật sau khi gắn tag. Kiểm lại `validate` trên cùng Draft PR và chỉ chuyển Ready ngày 20/11. Không suy ra TA đã nghiệm thu từ CI hoặc approval nội bộ.

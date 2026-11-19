@@ -1,6 +1,6 @@
-# Checklist bảo mật, quyền riêng tư và audit — ứng viên trước Freeze
+# Checklist bảo mật, quyền riêng tư và audit — đối chiếu tại Freeze
 
-**Phạm vi:** review và test code synthetic ở ứng viên `4be2751`, đối chiếu QA tại PR #10 commit `7af8d47`; chưa phải kiểm định toàn bộ môi trường hoặc xác nhận của GV/TA. Người tổng hợp: Lead (SV1). [Nguồn test audit](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/7af8d47fd410b96dcdb4b7caccd48580ce07cf4a/tests/test_audit.py) · [Quyết định audit](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/7af8d47fd410b96dcdb4b7caccd48580ce07cf4a/DECISIONS.md) · [Báo cáo test](TEST_REPORT.md).
+**Phạm vi:** review và test code synthetic ở mã nguồn `4be2751` đã có trong tag `bkt-2026-173820_n27-rc1` tại SHA `7af8d47`; đối chiếu QA tại PR #10; chưa phải kiểm định toàn bộ môi trường hoặc xác nhận của GV/TA. Người tổng hợp: Lead (SV1). [Nguồn test audit](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/7af8d47fd410b96dcdb4b7caccd48580ce07cf4a/tests/test_audit.py) · [Quyết định audit](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/7af8d47fd410b96dcdb4b7caccd48580ce07cf4a/DECISIONS.md) · [Báo cáo test](TEST_REPORT.md).
 
 | Mục cần kiểm | Bằng chứng / trạng thái | Giới hạn và việc tiếp theo |
 |---|---|---|
@@ -14,6 +14,6 @@
 | Đường dẫn audit | Mặc định ngoài repo trong thư mục người dùng; `DR_MAY_DAY_AUDIT_PATH` chấp nhận đường dẫn tuyệt đối ngoài repo. | Thành viên tự quản lý file và quyền truy cập; không commit log hoặc payload. |
 | JSONL có dòng hỏng | Ghi tiếp tách dòng nếu thiếu newline; công cụ đọc bỏ qua dòng sai/khóa trùng, báo vị trí và mã thoát 3 nếu đọc một phần. | Không sửa hoặc chứng thực phần dữ liệu cũ; không bảo đảm an toàn ghi đồng thời hay khôi phục sau mất điện. |
 | Secret / PII | Test canary và review dữ liệu synthetic chưa phát hiện dữ liệu bệnh nhân thật trong phạm vi rà. Chưa có bằng chứng kiểm toán độc lập toàn bộ repo/lịch sử tại SHA freeze. | Rà mã, file cấu hình, output và lịch sử ở SHA cuối; họ tên/MSSV trong hồ sơ là metadata nhóm công bố có chủ đích, không là input bệnh nhân. |
-| Bằng chứng ứng viên | [TEST_REPORT.md](TEST_REPORT.md) có CI 490 passed/3 skipped và hai lượt benchmark; [QA execution review](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/7af8d47fd410b96dcdb4b7caccd48580ce07cf4a/docs/qa/EXECUTION_REVIEW.md) ghi giới hạn. | Gắn SHA/tag và CI cuối; peer technical review cá nhân chưa có record đủ cho CHK-039/042/060. |
+| Bằng chứng tại tag | [TEST_REPORT.md](TEST_REPORT.md) có CI 490 passed/3 skipped và hai lượt benchmark; [QA execution review](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/7af8d47fd410b96dcdb4b7caccd48580ce07cf4a/docs/qa/EXECUTION_REVIEW.md) ghi giới hạn. | SHA/tag và CI đã ghim; peer technical review cá nhân chưa có record đủ cho CHK-039/042/060. |
 
 **Cảnh báo:** educational/synthetic — not for clinical use.

@@ -1,7 +1,7 @@
 # Hồ sơ nộp bài — Track A · Dr May Day Rule Engine Sprint
 
 - Nhóm `173820_n27`, lớp `173820`; thành viên và MSSV trong [submission.json](submission.json) và [CONTRIBUTIONS.md](artifacts/CONTRIBUTIONS.md).
-- [Draft PR #39](https://github.com/fossbk-spec/ktpmud-project/pull/39) được mở cho PC-2 ngày 17/11/2026. Nội dung đã đối chiếu với commit merge PR #10 và CI của commit này; tag `rc1` còn chờ tạo trước khi Freeze.
+- [Draft PR #39](https://github.com/fossbk-spec/ktpmud-project/pull/39) được mở cho PC-2 ngày 17/11/2026. Nội dung đã đối chiếu với commit merge PR #10 và CI của commit này; tag `rc1` đã được tạo trên đúng SHA đó.
 - Fork code: [Huy-duc-1211/ktpmud-bkt-ruleengine-starter](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter); commit sau merge [PR #10 `7af8d47`](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/commit/7af8d47fd410b96dcdb4b7caccd48580ce07cf4a), gồm mã/test đã có từ `4be2751` và hồ sơ QA/AI-use.
 - Starter: tag [`bkt-2026-v1`](https://github.com/fossbk-spec/ktpmud-bkt-ruleengine-starter/tree/bkt-2026-v1), SHA `1c0a5b11fe8ea2b8a3126665cfe13ff551ad3469`.
 
@@ -38,4 +38,4 @@ Trên Bash dùng `source .venv/bin/activate`. Có thể chạy `python run_case.
 
 [CI sau merge tại `7af8d47`](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/actions/runs/44525947180) thành công; lượt kiểm local 490 passed, 3 test Windows bị skip trên Linux. Hai lượt benchmark ứng viên đạt p95 0.301703/0.349306 ms trong `/tmp` tmpfs; xem [Test report](artifacts/TEST_REPORT.md) về môi trường và giới hạn.
 
-**Trước Ready for review:** `source-ref.json` đã ghi commit merge `7af8d47…` và CI tương ứng. Trường `release_tag` vẫn là tên dự kiến, **tag chưa được tạo**. Sau khi tạo tag trỏ đúng SHA này, cập nhật phần Freeze trong progress, kiểm lại tag và `validate` trên chính PR #39 rồi chuyển Ready ngày 20/11. Việc GV/TA nghiệm thu là bước riêng.
+**Sau Freeze:** [tag `bkt-2026-173820_n27-rc1`](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/tree/bkt-2026-173820_n27-rc1) trỏ đúng commit trong [source-ref.json](source-ref.json); [mục Freeze trong PROGRESS.md](https://github.com/Huy-duc-1211/ktpmud-bkt-ruleengine-starter/blob/e692ad5d45f6de21d28279b957eb723b8ec256ac/progress/PROGRESS.md) được ghi sau tag trên nhánh phát triển. `validate` trên PR #39 cần xanh ở HEAD cuối, rồi Leader chuyển **chính Draft PR #39** sang Ready for review ngày 20/11. Việc GV/TA nghiệm thu là bước riêng.
